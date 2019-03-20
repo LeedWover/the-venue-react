@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 import Header from './components/HeaderFooter/Header';
-import './resources/styles.css';
+import './styles.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{
+        height: '1100px'
+      }}>
         <Header />
       </div>
     );
