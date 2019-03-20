@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import { List, ListItem, SwipeableDrawer } from "@material-ui/core";
+
 
 class SideDrawer extends Component {
   
