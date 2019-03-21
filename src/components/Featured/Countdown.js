@@ -4,7 +4,7 @@ import { Slide } from "react-reveal";
 
 export default class Countdown extends Component {
   state = {
-    endTime: 'March, 30, 2019',
+    endTime: 'April, 30, 2019',
     seconds: 0,
     minutes: 0,
     hours: 0,
@@ -12,7 +12,7 @@ export default class Countdown extends Component {
   };
 
   getTimeUntil(timeEnd) {
-    const time = Date.parse(timeEnd) - Date.parse(new Date);
+    const time = Date.parse(timeEnd) - Date.parse(new Date());
     if(time < 0) {
       console.log('Passed')
     } else {
@@ -29,8 +29,8 @@ export default class Countdown extends Component {
       })
     }
   }
-  
-  componentWillMount() {
+
+  componentDidMount() {
     setInterval(() => this.getTimeUntil(this.state.endTime), 3000);
   }
 
@@ -42,7 +42,7 @@ export default class Countdown extends Component {
             <div className="countdown_bottom">
             <div className="countdown_item">
               <div className="countdown_time">{this.state.days}</div>
-              <div className="countdown_tag">days</div>
+              <div className="countdown_tag">Days</div>
             </div>
             <div className="countdown_item">
               <div className="countdown_time">{this.state.hours}</div>
