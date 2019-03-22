@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Zoom } from 'react-reveal';
 
 import Button from '../Utils/Button';
 
@@ -23,34 +24,41 @@ class Pricing extends Component {
       'https://google.com',
       'https://facebook.com',
       'https://twitter.com'
+    ],
+    delays: [
+      500,
+      0,
+      500
     ]
   }
   
   showBoxes = () => (
     this.state.prices.map((item, index) => (
-      <div className="pricing_item">
-        <div className="pricing_inner_wrapper">
-          <div className="pricing_title">
-            <span>
-              ${item}
-            </span>
-          </div>
-          <div className="pricing_description">
-            <span>
-              {this.state.descriptions[index]}
-            </span>
-          </div>
-          <div className="pricing_buttons">
-            <Button 
-              link={this.state.links[index]}
-              innerText={'Purchase Tickets'}
-              background={'#ffa800'}
-              color={"#fff"}
-              size={'small'}
-            />
+      <Zoom delay={this.state.delays[index]}>
+        <div className="pricing_item">
+          <div className="pricing_inner_wrapper">
+            <div className="pricing_title">
+              <span>
+                ${item}
+              </span>
+            </div>
+            <div className="pricing_description">
+              <span>
+                {this.state.descriptions[index]}
+              </span>
+            </div>
+            <div className="pricing_buttons">
+              <Button 
+                link={this.state.links[index]}
+                innerText={'Purchase Tickets'}
+                background={'#ffa800'}
+                color={"#fff"}
+                size={'small'}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </Zoom>
     ))
   )
 
