@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Fade, Slide } from "react-reveal";
 
+import Button from '../Utils/Button';
+
 class Discount extends Component {
+  
   state = {
     discountStart: 0,
     discountEnd: 30
@@ -25,7 +28,9 @@ class Discount extends Component {
     return (
       <div className="center_wrapper">
         <div className="discount_wrapper">
-          <Fade duration={2500} onReveal={() => this.porcentage()}>
+          <Fade
+            onReveal={() => this.porcentage()}
+          >
             <div className="discount_porcentage">
               <span>{this.state.discountStart}%</span>
               <span>Off</span>
@@ -41,7 +46,13 @@ class Discount extends Component {
                 quae quasi eos, cum, atque a quos commodi. Ad cum sed inventore
                 nostrum!
               </p>
-              <div>button</div>
+              <Button
+                innerText={'Purchase Tickets'}
+                background={'#ffa800'}
+                color={"#fff"}
+                size={'small'}
+                link={'https://www.google.com'}
+              />
             </div>
           </Slide>
         </div>
