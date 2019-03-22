@@ -4,6 +4,8 @@ import Carrousel from './Carrousel';
 import CountDown from './Countdown';
 
 const Featured = () => {
+  
+  
   return (
     <div style={{
       position: 'relative'
@@ -14,7 +16,7 @@ const Featured = () => {
           Ariana Grande
         </div>
       </div>
-      <CountDown />
+      {window.innerWidth > 720 ? <CountDown /> : null}
     </div>
   )
 }
