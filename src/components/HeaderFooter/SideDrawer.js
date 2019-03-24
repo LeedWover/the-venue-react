@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { scroller } from 'react-scroll';
 import { List, ListItem, SwipeableDrawer } from "@material-ui/core";
 
 
@@ -11,14 +12,36 @@ class SideDrawer extends Component {
       "Highlights",
       "Pricing",
       "Location"
+    ],
+    scrollElements: [
+      'featured',
+      'venueinfo',
+      'highlights',
+      'pricing',
+      'location'
     ]
   }
   
   render() {
     
+    const scrollToElement = element => {
+      scroller.scrollTo(element, {
+        duration: 1500,
+        delay: 100,
+        smooth: true
+      });
+      this.props.close(false)
+    }
+
     let list = this.state.listItems.map((listItem, index) => {
       return (
-        <ListItem button key={index}>{listItem}</ListItem>
+        <ListItem
+          button
+          onClick={() => scrollToElement(this.state.scrollElements[index])}
+          key={index}
+        >
+          {listItem}
+        </ListItem>
       )
     });
 
